@@ -6,17 +6,22 @@ import {
   Button,
   Container,
   Alert,
-  Image
+  Image,
+  Table
 } from 'react-bootstrap';
 
 import { user, reco } from './data/';
 import Profil from './profil';
+import logo from './static/oursin-logo.gif';
 
 const Home = () => (
   <Container>
     <Row>
       <Col sm={1}>
-        <Image width="80" src="https://cache.marieclaire.fr/data/photo/w1000_c17/138/jon-snow-game-of-thrones.jpg" roundedCircle />
+        <Image width="100" src={logo} />
+      </Col>
+      <Col>
+        <h2 className="mt-4">Oursin Project</h2>
       </Col>
     </Row>
     <Row>
@@ -36,9 +41,8 @@ const Home = () => (
         <Profil data={user[0]} />
       </Col>
     </Row>
-    <Row>
-      <Lists data={user} />
-      <Lists data={reco} />
+    <Row className="mt-3">
+      <List data={reco} />
     </Row>
   </Container>
 );
@@ -56,16 +60,31 @@ const FormSearch = () => (
   </Form>
 )
 
-const Lists = ({data}) => (
-  <ul>
-    {data.map((item) => <Item key={item.user_id || item.user_id_x} item={item} /> )}
-  </ul>
+const List = ({data}) => (
+  <Table>
+    <thead>
+      <tr>
+        <th>User ID</th>
+        <th>Business ID</th>
+        <th>Prediction</th>
+        <th>Categories</th>
+        <th>Business name</th>
+      </tr>
+    </thead>
+    <tbody>
+      {data.map((item) => <Item key={item.user_id || item.user_id_x} item={item} /> )}
+    </tbody>
+  </Table>
 );
 
 const Item = ({item}) => (
-  <li>
-    <span>{item.user_id || item.user_id_x} | {item.business_id} | {item.prediction || null} | {item.categories || null} | {item.business_name_y || null}</span>
-  </li>
+  <tr>
+    <td>{item.user_id_x}</td>
+    <td>{item.business_id}</td>
+    <td>{item.prediction || 'N/A'}</td>
+    <td>{item.categories || 'N/A'}</td>
+    <td>{item.business_name_y || 'N/A'}</td>
+  </tr>
 );
 
 export default Home;
