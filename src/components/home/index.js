@@ -58,9 +58,9 @@ const FormSearch = () => (
       </Col>
     </Form.Row>
   </Form>
-)
+);
 
-const List = ({data}) => (
+const List = ({ data }) => (
   <Table>
     <thead>
       <tr>
@@ -77,7 +77,7 @@ const List = ({data}) => (
   </Table>
 );
 
-const Item = ({item}) => (
+const Item = ({ item }) => (
   <tr>
     <td>{item.user_id_x}</td>
     <td>{item.business_id}</td>

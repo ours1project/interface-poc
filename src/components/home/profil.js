@@ -19,7 +19,7 @@ const Profil = ({ data }) => (
           <ListGroup.Item>Last Name : {data.lastName}</ListGroup.Item>
           <ListGroup.Item>Age : {data.age}</ListGroup.Item>
           <ListGroup.Item>Sexe : {data.gender}</ListGroup.Item>
-          <ListGroup.Item>Location : {data.location[0]} | {data.location[1]}</ListGroup.Item>
+          {/*<ListGroup.Item>Location : {data.location[0]} | {data.location[1]}</ListGroup.Item>*/}
         </ListGroup>
       </Col>
     </Row>

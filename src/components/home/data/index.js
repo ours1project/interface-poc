@@ -1,9 +1,4 @@
 export const user = [{
-  firstName: 'Cyril',
-  lastName: 'Vimard',
-  gender: 'male',
-  age: 32,
-  location: [10.28362, 19.837623], 
   id: '5eeejfdjd7363',
   funny: "1",
   useful: "6",
